@@ -58,7 +58,7 @@ window.onload = function () {
     lastname: "Doe",
     age: 5,
     gender: "male",
-    sports: ["clambing", "yoga"],
+    sports: ["climbing", "yoga"],
   };
   // Defino los arrays de conjuntos de persons
   let family = [person1, person2, person3, person4]
