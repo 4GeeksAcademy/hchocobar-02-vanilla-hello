@@ -13,6 +13,11 @@ if(process.env.GITPOD_WORKSPACE_URL){
   const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://');
   publicUrl = `${port}-${host}`;
 }
+// Only for codespaces
+if(process.env.CODESPACE_NAME){
+  // publicUrl = `wss://${process.env.CODESPACE_NAME}-${port}.preview.app.github.dev/ws`;
+  publicUrl = `wss://${process.env.CODESPACE_NAME}-${port}.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/ws`;
+}
 
 module.exports = {
   mode: 'development',
