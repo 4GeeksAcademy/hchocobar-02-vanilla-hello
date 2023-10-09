@@ -1,1 +1,32 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background: green;
+}
+
+.card {
+  margin: auto;
+  background: white;
+  width: 200px;
+  height: 300px;
+}
+
+.card-top {
+  color: red;
+  font-size: large;
+}
+
+.card-number {
+  font-size: large;
+}
+
+.card-button {
+  font-size: large;
+}
+
+.card-red {
+  color: red;
+}
+
+.card-black {
+  color: black;
+}
