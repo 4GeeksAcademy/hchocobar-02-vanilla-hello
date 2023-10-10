@@ -1,0 +1,9 @@
+street : "Caballero de Gracia", "Álvarez Gato", "Cervantes", "Echegaray", "la Berenjena", "las Huertas", "Lope de Vega", "Moratín", "San Sebastián", "Doctor Cortezo", "Infante"
+number : "879", "6845", "1458", "8547", "357", "4489", "135", "1107", "1752", "3845"
+city : "Madrid", "Barcelona", "Cadiz", "Gerona", "Bilbao", "Cordoba", "Sevilla", "Valencia", "Badajoz"
+zipcode : "28004", "08003", "11006", "17002", "48014", "14009", "41001", "46002", "06004"
+
+
+
+
+
