@@ -20,12 +20,8 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": {
-				"editor.formatOnSave": true,
-				"workbench.editorAssociations": {   
-					"*.md": "vscode.markdown.preview.editor"
-				}
-			},
-			"extensions": [ "esbenp.prettier-vscode" ]
+				"editor.formatOnSave": true
+			}
 		}
 	}
 
