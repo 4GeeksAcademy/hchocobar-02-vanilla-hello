@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* 
 Nuestro cliente necesita un programa que cuente las repeticiones de las letras en un string dado. Sé que es extraño, pero es muy testarudo ¡Lo necesitamos lo antes posible!
 
