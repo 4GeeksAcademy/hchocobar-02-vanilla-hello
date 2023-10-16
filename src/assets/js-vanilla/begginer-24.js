@@ -33,13 +33,16 @@
 
   function addAllFamilyLuckyNumbers(anArray) {
     let sumOfAllLuckyNumbers = 0; //sumOfAllLuckyNumbers is a number, the sum of all lucky numbers.
-    for (let i = 0; i < anArray.length; i++) {
+    anArray.map((element) => {
+      console.log(element.lucky_numbers[0]);
+    });
+    /* for (let i = 0; i < anArray.length; i++) {
       for (let x = 0; x < anArray[i].lucky_numbers.length; x++) {
         sumOfAllLuckyNumbers += anArray[i].lucky_numbers[x];
         // Muestro un console.log en cada iteración
-        console.log('i:', i, 'x:', x, anArray[i], anArray[i].lucky_numbers[x], sumOfAllLuckyNumbers )
+        console.log('i:', i, 'x:', x, anArray[i], anArray[i].lucky_numbers[x], sumOfAllLuckyNumbers );
       }
-    }
+    } */
     // To-Do: loop and add; consider nested loops
     // Hint: use the anArray variable to get all of the lucky numbers
 
