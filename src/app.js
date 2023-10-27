@@ -8,7 +8,6 @@ import "./assets/img/4geeks.ico";
 window.onload = function () {
   // Declaramos la Función (definimos)
   function allSports(aFamily) {
-    
     /* 
     // let result = [];    for (const i in aFamily) {
           const element = aFamily[i];
@@ -31,9 +30,9 @@ window.onload = function () {
                   </div>
                 </div>`
         } */
-        let result = '';
-        aFamily.map((element, id) => {
-            result += `<div class="card key=${id}">
+    let result = '';
+    aFamily.map((element, id) => {
+      result += `<div class="card key=${id}">
                     <img src=${element.image} class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${element.name} ${element.lastname}</h5>
@@ -44,8 +43,11 @@ window.onload = function () {
                   </div>`
 
     })
-
-    let person1 = {
+    console.log(result);
+    return result;
+  }
+  
+  let person1 = {
     name: 'Jhon',
     image: 'https://img.freepik.com/foto-gratis/apuesto-joven-brazos-cruzados-sobre-fondo-blanco_23-2148222620.jpg?size=626&ext=jpg',
     age: 35,
@@ -74,16 +76,11 @@ window.onload = function () {
     members: [person1, person2, person3]
   };
 
-    console.log(result);
-    return result;
-  }
-
-
   // Invocar la Función (llamarla, ejecutarla)
   // console.log(allSports(family.members))
 
   // Capturar un elemento HTML - tag, .class, #id
-  let myTag = document.querySelector('#sports')
+  let myTag = document.querySelector('#sports');
   myTag.innerHTML += allSports(family.members);
 
   console.log("Hello JavaScript from the console!");

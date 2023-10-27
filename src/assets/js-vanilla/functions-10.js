@@ -21,8 +21,8 @@ console.log(multi(2,2));
 */
 // Your code goes here
 const rapid = (myString) => {
-  return myString.toLowerCase()
-}
+  return myString.toLowerCase();
+};
 
 // Work above this line; do not change code below
 let str = "John";
