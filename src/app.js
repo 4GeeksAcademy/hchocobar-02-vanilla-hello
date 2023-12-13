@@ -4,8 +4,9 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+
 window.onload = function () {
-  //write your code here
+  // Write your code here
   const john =     {
     "id": 1,
     "name": "John Lennon",
@@ -227,11 +228,12 @@ window.onload = function () {
 
   console.log(john);
   // Capturando el elemento HTML cuyo id es app
-  const tag = document.querySelector('#app')  // document.getElementById('app')
-
+  const tag = document.querySelector('#app')  // Similar a: document.getElementById('app')
+  // Modifico la propiedad innertHTML del elemento que capturé
   tag.innerHTML += '<div class="card-group row-cols-md-3">'
+  // Recorro el array con un map()
   persons.map((item, id) => {
-    // Si el modulo del indice del array entre 20 es igual a 0, entonces creo otra págiana
+    // Si el módulo del indice del array entre 20 es igual a 0, entonces creo otra página
     tag.innerHTML += `
       <div class="card" key=${item.id}>
         <img src=${item.imageUrl} class="card-img-top" alt=${item.name} style="width: 40px">

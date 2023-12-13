@@ -4,8 +4,9 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+
 window.onload = function () {
-  //write your code here
+  // Write your code here
   const person1 = {
     name: 'Joe',
     age: 35,
@@ -29,7 +30,7 @@ window.onload = function () {
     member: [person1, person2, person3]
   }
   
-  const tag = document.querySelector('#app')  // document.getElementById('app')
+  const tag = document.querySelector('#app')  // Similar a: document.getElementById('app')
   /* 
   console.log('Result');
   console.log(family.member[0].name)
