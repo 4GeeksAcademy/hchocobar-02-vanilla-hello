@@ -51,7 +51,7 @@ window.onload = function () {
       "phone": "1-770-736-8031 x56442",
       "website": "hildegard.org",
       "company": {
-        "name": "Romaguera-Crona",
+        "name": "The Beatles",
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
       }
@@ -75,7 +75,7 @@ window.onload = function () {
       "phone": "010-692-6593 x09125",
       "website": "anastasia.net",
       "company": {
-        "name": "Deckow-Crist",
+        "name": "The Beatles",
         "catchPhrase": "Proactive didactic contingency",
         "bs": "synergize scalable supply-chains"
       }
@@ -99,7 +99,7 @@ window.onload = function () {
       "phone": "1-463-123-4447",
       "website": "ramiro.info",
       "company": {
-        "name": "Romaguera-Jacobson",
+        "name": "The Beatles",
         "catchPhrase": "Face to face bifurcated interface",
         "bs": "e-enable strategic applications"
       }
@@ -123,7 +123,7 @@ window.onload = function () {
       "phone": "493-170-9623 x156",
       "website": "kale.biz",
       "company": {
-        "name": "Robel-Corkery",
+        "name": "The Beatles",
         "catchPhrase": "Multi-tiered zero tolerance productivity",
         "bs": "transition cutting-edge web services"
       }
@@ -147,7 +147,7 @@ window.onload = function () {
       "phone": "(254)954-1289",
       "website": "demarco.info",
       "company": {
-        "name": "Keebler LLC",
+        "name": "Queen",
         "catchPhrase": "User-centric fault-tolerant solution",
         "bs": "revolutionize end-to-end systems"
       }
@@ -171,7 +171,7 @@ window.onload = function () {
       "phone": "1-477-935-8478 x6430",
       "website": "ola.org",
       "company": {
-        "name": "Considine-Lockman",
+        "name": "Queen",
         "catchPhrase": "Synchronised bottom-line interface",
         "bs": "e-enable innovative applications"
       }
@@ -195,7 +195,7 @@ window.onload = function () {
       "phone": "210.067.6132",
       "website": "elvis.io",
       "company": {
-        "name": "Johns Group",
+        "name": "Queen",
         "catchPhrase": "Configurable multimedia task-force",
         "bs": "generate enterprise e-tailers"
       }
@@ -219,7 +219,7 @@ window.onload = function () {
       "phone": "586.493.6943 x140",
       "website": "jacynthe.com",
       "company": {
-        "name": "Abernathy Group",
+        "name": "Queen",
         "catchPhrase": "Implemented secondary concept",
         "bs": "e-enable extensible e-tailers"
       }
@@ -230,20 +230,21 @@ window.onload = function () {
   // Capturando el elemento HTML cuyo id es app
   const tag = document.querySelector('#app')  // Similar a: document.getElementById('app')
   // Modifico la propiedad innertHTML del elemento que capturé
-  tag.innerHTML += '<div class="card-group row-cols-md-3">'
+  
   // Recorro el array con un map()
   persons.map((item, id) => {
     // Si el módulo del indice del array entre 20 es igual a 0, entonces creo otra página
     tag.innerHTML += `
-      <div class="card" key=${item.id}>
-        <img src=${item.imageUrl} class="card-img-top" alt=${item.name} style="width: 40px">
-        <div class="card-body">
-          <h5 class="card-title">${item.name}</h5>
-          <p class="card-text">${item.email}</p>
-          <p class="card-text"><small class="text-body-secondary">${item.company}</small></p>
+      <div class="col" key=${item.id}>
+        <div class="card my-3 mx-2">
+          <img src=${item.imageUrl} alt=${item.name}">
+          <div class="card-body text-start">
+            <h5 class="card-title">${item.name}</h5>
+            <p class="card-text">${item.email}</p>
+            <p class="card-text"><small class="text-body-secondary">${item.company.name}</small></p>
+          </div>
         </div>
       </div>`
   })
-  tag.innerHTML += '</div>'
   // tag.innerHTML = '<ul><li>Hockey</li><li>Soccer</li><li>Baseball</li></ul>'
 };
