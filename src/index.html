@@ -7,18 +7,29 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
-  <body>
+  <body class="bg-success text-light">
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
+      <h1 class="my-4">Random Card Generator</h1>
+      <div class="row d-flex justify-content-center">
+        <div class="col-4 col-sm-3 col-md-2 rounded bg-light text-dark my-card">
+          <div class="d-flex justify-content-start">
+            <span id="top">♠</span>
+          </div>
+          <div class="d-flex justify-content-center my-4">
+            <p id="number">7</p>
+          </div>
+          <div class="d-flex justify-content-end">
+            <span id="end" style="transform: rotate(180deg)">♠</span>
+          </div>
+        </div>
+      </div>
+      <div class="m-2">
+        <button id="btnNewCard" class="btn btn-warning">New Card</button>
+      </div>
+      <div class="p-4">
         Made with ❤️ by
-        <a href="http://chocobar.net" target="_blank" rel="noopener noreferrer">Héctor Chocobar Torrejón</a> & 
-        <a href="https://www.4geeksacademy.com" target="_blank" >4Geeks Academy</a>
+        <a class="link-warning" href="http://chocobar.net" target="_blank" rel="noopener noreferrer">Héctor Chocobar Torrejón</a> & 
+        <a class="link-warning" href="https://www.4geeksacademy.com" target="_blank" >4Geeks Academy</a>
       </div>
     </div>
   </body>
