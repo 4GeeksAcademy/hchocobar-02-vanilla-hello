@@ -5,7 +5,11 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 
+
 window.onload = function () {
+  function handleLogin() {
+    console.log('Funciona');
+  }
   // Write your code here
   const john =     {
     "id": 1,
@@ -226,7 +230,7 @@ window.onload = function () {
     }
   ]
 
-  console.log(john);
+  // console.log(john);
   // Capturando el elemento HTML cuyo id es app
   const tag = document.querySelector('#app')  // Similar a: document.getElementById('app')
   // Modifico la propiedad innertHTML del elemento que capturé
