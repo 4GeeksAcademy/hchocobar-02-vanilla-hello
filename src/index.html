@@ -10,8 +10,21 @@
   <body>
     <div class="container-fluid text-center">
       <h1 class="mt-5">JavaScript</h1>
-      <div id="list" class="alert alert-warning mt-4"></div>
-      <div id="card" class="row row-cols-1 row-cols-md-3 row-cols-xl-5 g-2"></div>
+      <h2 class="text-primary">Renderizado condicional</h2>
+      <div>
+        <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between">
+                <div>Tarea 1</div>
+                <div>
+                  <span class="mx-1"><i class="far fa-check-circle text-success"></i></span>
+                  <span class="mx-1"><i class="far fa-times-circle text-danger"></i></span>
+                  <span class="mx-1"><i class="fas fa-trash-alt text-danger"></i></span>
+                </div>
+              </li>
+        </ul>
+      </div>
+      <h2 class="mt-3">Tareas</h2>
+      <div id="todos"></div>
     </div>
   </body>
 </html>
