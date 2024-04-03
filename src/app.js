@@ -3,66 +3,86 @@ import "bootstrap";
 import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+import jobs from "./assets/js-vanilla/jobs.json";
 
 
 window.onload = function () {
-  // Write your code here
-  console.log('hola mundo')
+  let view = false;
+  let formHTML = '';
+  formHTML += `
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+      <div class="col-12">
+        <label class="visually-hidden" for="inlineFormInputGroupUsername">Password</label>
+        <div class="input-group">
+          <input type=${view ? 'text' : 'password'}
+            class="form-control" id="inlineFormInputGroupUsername" placeholder="Password"
+          >
+          <div class="input-group-text text-light ${view ? 'bg-success' : 'bg-danger'}">
+            ${view ? '<i class="fas fa-eye-slash"></i>' : '<i class="fas fa-eye"></i>'}
+          </div>
+        </div>
+      </div>
+    </form>
+  `;
+  document.querySelector('#login').innerHTML = formHTML;
 
-  let pronoun = ['the', 'our'];
-  let adj = ['great', 'big'];
-  let noun = ['jogger', 'racoon'];
+  // Ejemplo 1: Una lista de string
+  let day = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes'];
+  let dayHTML = '<p class="alert alert-danger">Days</p><ul class="list-group">';  // Header
+  day.map((item, id) => {
+        dayHTML += `<li key=${id} class="list-group-item">${item}</li>`  // Body
+  });
+  dayHTML += '</ul>'  // Footer
+  document.querySelector('#days').innerHTML = dayHTML;
 
-  // Using for length
-  let textFor = '<ul class="list-group">'
-  textFor += '<li class="list-group-item bg-success text-light">Using for length</li>'
-  for (let i = 0; i < pronoun.length; i++) {
-    for (let j = 0; j < adj.length; j++) {
-      for (let k = 0; k < noun.length; k++) {
-        textFor += '<li class="list-group-item">' + i + '-' + pronoun[i] + j + '-' + adj[j] + k + '-' + noun[k] + '</li>'
-      }
+
+  // Ejemplo 2: Una lista de objetos renderizada en list-group
+  let places = [
+    {
+      'city' : "Madrid",
+      "zipcode" : "28004"
+    },
+    {
+     "city": "Barcelona", 
+     "zipcode" : "11006"
+    },
+    {
+     "city": "Cadiz", 
+     "zipcode" : "28004"
+    },
+    {
+    "city": "Gerona", 
+     "zipcode" : "28004"
     }
-  }
-  textFor += '</ul>'
-  document.querySelector('#for').innerHTML = textFor;
+  ]
+  let citiesHTML = '<p class="alert alert-warning">Cities</p><ul class="list-group text-start">';  // Header
+  places.map((item, id) => {
+    citiesHTML += `
+      <li key=${id} class="list-group-item">
+        Ciudad: ${item.city}, zipcode: ${item.zipcode}
+      </li>`  // Body
+  });
+  citiesHTML += '</ul>'  // Footer
+  document.querySelector('#cities').innerHTML = citiesHTML;
 
 
-  // Using for of
-  let textOf =  '<ul class="list-group">'
-  textOf += '<li class="list-group-item bg-success text-light">Using for of</li>'
-
-  for (const iterator of pronoun) {
-    for (const item of adj) {
-      for (const element of noun) {
-        textOf += `
-          <li class="list-group-item">
-            ${iterator}${item}${element}.com
-          </li>`
-      }
-    }
-  }
-  textOf += '</ul>'
-  document.querySelector('#of').innerHTML = textOf;
-
-
-  // Using method .map()
-  let textMap = '<ul class="list-group">'
-  textMap += '<li class="list-group-item bg-success text-light">Using .map()</li>'
-
-  pronoun.map((iterator) => {
-    adj.map((item) => {
-      noun.map((element) => {
-        textMap += `
-          <li class="list-group-item">
-            ${iterator}${item}${element}.com
-          </li>
-        `
-      })
-    })
-  })
-
-  textMap += '</ul>';
-  document.querySelector('#map').innerHTML = textMap;
-
-
+  // Ejemplo 3: Una lista de objetos renderizada en cards
+  let jobsHTML = `
+    <div class="container">
+      <p class="alert alert-info">Jobs</p>`;
+      jobs.map((item, id) => {
+        jobsHTML += `
+          <div key=${id} class="card m-2">
+            <div class="card-body">
+              <h5 class="card-title">${item.title}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">${item.company}</h6>
+              <p class="card-text">${item.insight}</p>
+              <a href="#" class="card-link">${item.time}</a>
+              <a href="#" class="card-link">${item.applyMethod}</a>
+            </div>
+          </div>`  // body
+      });
+  jobsHTML += '</div>'  // footer
+  document.querySelector('#jobs').innerHTML = jobsHTML;
+  console.log(jobs)
 };
