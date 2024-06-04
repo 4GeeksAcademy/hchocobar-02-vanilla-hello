@@ -6,68 +6,97 @@ import "./assets/img/4geeks.ico";
 
 
 window.onload = function () {
-  // Write your code here
-  let cohorte = 'Spain-72';  // Type: string
-  // Muestro las excucas en html
-  let excuse = document.querySelector('#excuse');
-  excuse.innerHTML = myExcuse();
-  // Muestro los dominios en html
-  let domain = document.querySelector('#domains');
-  domain.innerHTML = domainGenerator();
-};
+  // 1. Declarar el listado de tareas
+  const todos = [
+    {
+      "name": "Jhon",
+      "id": 1,
+      "title": "delectus aut autem",
+      "completed": false
+    },
+    {
+      "name": "Ringo",
+      "id": 2,
+      "title": "quis ut nam facilis et officia qui",
+      "completed": false
+    },
+    {
+      "name": "George",
+      "id": 3,
+      "title": "fugiat veniam minus",
+      "completed": false
+    },
+    {
+      "name": "George",
+      "id": 4,
+      "title": "et porro tempora",
+      "completed": true
+    },
+    {
+      "name": "Jhon",
+      "id": 5,
+      "title": "laboriosam mollitia et enim quasi",
+      "completed": false
+    },
+    {
+      "name": "Paul",
+      "id": 6,
+      "title": "qui ullam ratione quibusdam",
+      "completed": false
+    },
+    {
+      "name": "Ringo",
+      "id": 7,
+      "title": "illo expedita consequatur quia in",
+      "completed": false
+    },
+    {
+      "name": "Paul",
+      "id": 8,
+      "title": "quo adipisci enim quam ut ab",
+      "completed": true
+    },
+    {
+      "name": "Jhon",
+      "id": 9,
+      "title": "molestiae perspiciatis ipsa",
+      "completed": false
+    },
+    {
+      "name": "George",
+      "id": 10,
+      "title": "illo est ratione doloremque quia",
+      "completed": true
+    },
+  ]
+  console.log(todos);
 
-
-function myExcuse(params) {
-  let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
-  let action = ['ate', 'peed', 'crushed', 'broke'];
-  let what = ['my homework', 'my phone', 'the car'];
-  let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
-  // Genero los indices aleatorios
-  let whoIndex = Math.floor(Math.random() * who.length);
-  let actionIndex = Math.floor(Math.random() * action.length);
-  let WhatIndex = Math.floor(Math.random() * what.length);
-  let whenIndex = Math.floor(Math.random() * when.length);
-  // console.log(whoIndex, actionIndex, WhatIndex, whenIndex)
-  // let text = `${who[whoIndex]} ${action[actionIndex]} ${what[WhatIndex]} ${when[whenIndex]}`
-  // return text ;
-  return `${who[whoIndex]} ${action[actionIndex]} ${what[WhatIndex]} ${when[whenIndex]}`
-};
-
-
-function domainGenerator(params) {
-  let pronoun = ['the', 'our', 'my'];
-  let adjective = ['great', 'big', 'small'];
-  let noun = ['jogger', 'racoon'];
-  /* Generando con for loop */
-  let textLoop = '';
-  for (let i = 0; i < pronoun.length; i++) {
-    for (let j = 0; j < adjective.length; j++) {
-      for (let k = 0; k < noun.length; k++) {
-        textLoop += `<li class="list-group-item">${pronoun[i]} ${adjective[j]} ${noun[k]}</li>`
-        // console.log(pronoun[i], adjective[j], noun[k]);
-        // console.log(text);
-      }
-    }
-  }
-  /* Generando con for of */
-  let textOf = '';
-  for (const iterator of pronoun) {
-    for (const item of adjective) {
-      for (const element of noun) {
-        textOf += `<li class="list-group-item">${iterator} ${item} ${element}</li>`
-        // console.log(iterator, item, element);
-      }
-    }
-  }
-  /* Generando con .map() */
-  let textMap = '';
-  pronoun.map((iterator) => {
-    adjective.map((item) => {
-      noun.map((element) => {
-        textMap += `<li class="list-group-item">${iterator} ${item} ${element}</li>`
-        // console.log(iterator, item, element);
-      })
-    })
+  // 2. Generar la lista de tareas tomando como base el array todos y lo almaceno en una varible tipo string
+  let todosHTML = ''
+  todos.map((item) => {
+    todosHTML += `
+      <li key=${item.id} class="list-group-item d-flex justify-content-between">
+        <div>${item.name} <i class="fas fa-wine-glass-alt text-info"></i> ${item.title}</div>
+        <div>
+          ${item.completed ? `
+            <span class="mx-1"><i class="far fa-check-circle text-success"></i></span>
+          ` 
+          : `
+            <span class="mx-1"><i class="far fa-times-circle text-danger"></i></span>
+          `}
+          <span class="mx-1"><i class="fas fa-trash-alt text-danger"></i></span>
+        </div>
+      </li>
+    `
   })
-  return textMap
-}
+
+  // 3. Capturar la <ul> con id todos
+  let tag = document.querySelector('#todos')
+  console.log(tag.innerHTML)
+  tag.innerHTML = todosHTML
+
+};
+
+
+// Operador Ternario
+// condicion ? valor_x_verdadero : valor_x_falso
