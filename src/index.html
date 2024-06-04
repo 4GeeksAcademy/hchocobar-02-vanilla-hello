@@ -14,20 +14,15 @@
   <div class="container-fluid text-center">
     <h1 class="mt-3">JavaScript</h1>
     <!-- <img src="./rigo-baby.jpg" /> -->
-    <p class="alert alert-warning mt-4">Fourth Class</p>
+    <!-- <p class="alert alert-warning mt-4">Fourth Class</p> -->
     <!-- Renderizado Condicional -->
     <div class="container">
       <h2 class="text-primary">Renderizado Condicional</h2>
       <div>
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between">
-            <div>Tarea 1</div>
-            <div>
-              <span class="mx-1"><i class="far fa-check-circle text-success"></i></span>
-              <span class="mx-1"><i class="far fa-times-circle text-danger"></i></span>
-              <span class="mx-1"><i class="fas fa-trash-alt text-danger"></i></span>
-            </div>
-          </li>
+        <ul id="todos" class="list-group">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </ul>
       </div>
     </div>

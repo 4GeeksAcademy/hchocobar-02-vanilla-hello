@@ -71,6 +71,32 @@ window.onload = function () {
   ]
   console.log(todos);
 
-  // Muestro las excucas en html
+  // 2. Generar la lista de tareas tomando como base el array todos y lo almaceno en una varible tipo string
+  let todosHTML = ''
+  todos.map((item) => {
+    todosHTML += `
+      <li key=${item.id} class="list-group-item d-flex justify-content-between">
+        <div>${item.name} <i class="fas fa-wine-glass-alt text-info"></i> ${item.title}</div>
+        <div>
+          ${item.completed ? `
+            <span class="mx-1"><i class="far fa-check-circle text-success"></i></span>
+          ` 
+          : `
+            <span class="mx-1"><i class="far fa-times-circle text-danger"></i></span>
+          `}
+          <span class="mx-1"><i class="fas fa-trash-alt text-danger"></i></span>
+        </div>
+      </li>
+    `
+  })
+
+  // 3. Capturar la <ul> con id todos
+  let tag = document.querySelector('#todos')
+  console.log(tag.innerHTML)
+  tag.innerHTML = todosHTML
 
 };
+
+
+// Operador Ternario
+// condicion ? valor_x_verdadero : valor_x_falso
