@@ -1,4 +1,5 @@
-  var person = {
+/* eslint-disable */
+var person = {
     name: "John",                // String
     lastname: "Doe",
     age: 35,                     // Number
